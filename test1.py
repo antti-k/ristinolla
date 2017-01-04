@@ -1,9 +1,9 @@
 import unittest
 
 from risti import emptyBoard
-
 from risti import markBoard
 from risti import vCheck
+from risti import hCheck
 
 class TestiLuokka(unittest.TestCase):
 	def testEmptyBoard(self):
@@ -21,6 +21,14 @@ class TestiLuokka(unittest.TestCase):
 		self.assertEqual(vCheck(board), 1)
 		board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 		self.assertEqual(vCheck(board), False)
+
+	def testHCheck(self):
+		board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+		self.assertEqual(hCheck(board), False)
+		board = [[0, 2, 0], [0, 2, 0], [0, 2, 0]]
+		self.assertEqual(hCheck(board), 2)	
+
+	
 
 
 unittest.main()

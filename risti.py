@@ -14,8 +14,8 @@ def markBoard(x, y, board, player):
 def vCheck(board):
 	for col in board:	
 		if 0 not in col and len(set(col)) == 1:
-				return col[0]
+			return col[0]
 	return False
 
 def hCheck(board):
-	return vCheck(zip(board))
+	return vCheck(zip(*board))
