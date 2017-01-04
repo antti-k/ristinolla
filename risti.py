@@ -1,25 +1,21 @@
 def emptyBoard(x, y):
-	tmp1 = []
-	for i in range(y):
-		tmp2 = []
-		for j in range(x):
-			tmp2.append(0)
-		tmp1.append(tmp2)
-	return tmp1
+	#Returns x by y array of 0's
+	return [[0 for xx in range(x)] for yy in range(y)]
 
 def markBoard(x, y, board, player):
-	if board[y][x] == 0:
+	#if board[x][y] is 0 replaces it with player and returns modified board
+	if board[x][y] == 0:
 		tmpboard = board
-		tmpboard[y][x] = player
+		tmpboard[x][y] = player
 		return tmpboard
 	else:
 		return False
 
-def clearBoard(board):
-	tmbpboard = board
-	for i in range(len(tmpboard)):
-		for j in range(len(tmpboard[i])):
-			tmpboard[i][j] = 0
-	return tmpboard
+def vCheck(board):
+	for col in board:	
+		if 0 not in col and len(set(col)) == 1:
+				return col[0]
+	return False
 
-	
+def hCheck(board):
+	return vCheck(zip(board))
